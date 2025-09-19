@@ -5,6 +5,7 @@ import { GeistMono } from "geist/font/mono";
 import { CopilotKit } from "@copilotkit/react-core";
 import "./globals.css";
 import "@copilotkit/react-ui/styles.css";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -23,16 +24,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} ${GeistMono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${manrope.variable} ${GeistMono.variable}`}>
       <body className="subpixel-antialiased">
-        <CopilotKit
-          runtimeUrl="/api/copilotkit"
-          agent="sample_agent"
-          showDevConsole={process.env.NODE_ENV !== 'production'}
-          publicApiKey={process.env.NEXT_PUBLIC_COPILOTKIT_API_KEY}
-        >
-          {children}
-        </CopilotKit>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <CopilotKit
+            runtimeUrl="/api/copilotkit"
+            agent="sample_agent"
+            showDevConsole={process.env.NODE_ENV !== 'production'}
+            publicApiKey={process.env.NEXT_PUBLIC_COPILOTKIT_API_KEY}
+          >
+            {children}
+          </CopilotKit>
+        </ThemeProvider>
       </body>
     </html>
   );

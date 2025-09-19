@@ -3,6 +3,7 @@
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { X } from "lucide-react";
 import { useChatContext, HeaderProps } from "@copilotkit/react-ui";
+import ModeToggle from "@/components/ui/mode-toggle";
 
 export function AppChatHeader({ onClose }: { onClose?: () => void }) {
   return (
@@ -22,16 +23,19 @@ export function AppChatHeader({ onClose }: { onClose?: () => void }) {
             </div>
           </div>
         </div>
-        {typeof onClose === "function" && (
-          <button
-            type="button"
-            aria-label="Close"
-            className="inline-flex h-8 w-8 items-center justify-center rounded-md border text-muted-foreground hover:text-foreground hover:bg-accent/10"
-            onClick={() => onClose?.()}
-          >
-            <X className="h-4 w-4" />
-          </button>
-        )}
+        <div className="flex items-center gap-1.5">
+          <ModeToggle />
+          {typeof onClose === "function" && (
+            <button
+              type="button"
+              aria-label="Close"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-md border text-muted-foreground hover:text-foreground hover:bg-accent/10"
+              onClick={() => onClose?.()}
+            >
+              <X className="h-4 w-4" />
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
