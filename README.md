@@ -1,117 +1,128 @@
-# CopilotKit <> Mastra AG-UI Canvas Starter
+CopilotKit <> Mastra AG-UI Canvas Starter
 
-This is a starter template for building AI-powered canvas applications using [Mastra](https://mastra.ai) and [CopilotKit](https://copilotkit.ai). It provides a modern Next.js application with an integrated Mastra agent that manages a visual canvas of interactive cards with real-time AI synchronization.
+Created by Innovation Imperial
+Developed by McMarsh
 
-<div align="center">
-  
-  [![Watch the video](https://img.youtube.com/vi/SyAVurXABYg/0.jpg)](https://www.youtube.com/watch?v=SyAVurXABYg)
-  
-  Watch the walkthrough video, click the image ⬆️
-  
-</div>
+This is a starter template for building AI-powered canvas applications using Mastra
+ and CopilotKit
+. It provides a modern Next.js application integrated with a Mastra agent that manages a visual canvas of interactive cards with real-time AI synchronization.
 
+✨ Key Features
 
+Visual Canvas Interface with responsive grid layout
 
+Four Card Types:
 
-## ✨ Key Features
+Project — text fields, dropdown, date picker, checklist
 
-- **Visual Canvas Interface**: Drag-free canvas displaying cards in a responsive grid layout
-- **Four Card Types**: 
-  - **Project**: Includes text fields, dropdown, date picker, and checklist
-  - **Entity**: Features text fields, dropdown, and multi-select tags
-  - **Note**: Simple rich text content area
-  - **Chart**: Visual metrics with percentage-based bar charts
-- **Real-time AI Sync**: Bidirectional synchronization between the AI agent and UI canvas
-- **Multi-step Planning**: AI can create and execute plans with visual progress tracking
-- **Human-in-the-Loop (HITL)**: Intelligent interrupts for clarification when needed
-- **JSON View**: Toggle between visual canvas and raw JSON state
-- **Responsive Design**: Optimized for both desktop (sidebar chat) and mobile (pop-up chat)
-- **Mastra Integration**: Built on Mastra's powerful agent framework with memory management
+Entity — text fields, dropdown, multi-select tags
 
+Note — rich text area
 
-## 📌 Prerequisites
+Chart — visual metrics with percentage-based bars
 
-- Node.js 18+ 
-- Any of the following package managers:
-  - pnpm (recommended)
-  - npm
-  - yarn
-  - bun
+Real-time AI Sync (bidirectional)
 
-> **Note:** This repository ignores lock files (package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lock) to avoid conflicts between different package managers. Each developer should generate their own lock file using their preferred package manager. After that, make sure to delete it from the .gitignore.
+AI Multi-step Planning with visual progress
 
-## ✈️ Getting Started
+Human-in-the-Loop Clarification
 
-1. Add your OpenAI API key
-```bash
-# You can use whatever model Mastra supports
+Toggle Between Canvas & JSON View
+
+Responsive Design with mobile chat UI
+
+Mastra Integration with memory, tools, and model control
+
+📌 Prerequisites
+
+Node.js 18+
+
+One of:
+
+pnpm (recommended)
+
+npm
+
+yarn
+
+bun
+
+Note: Lock files are ignored to support multiple package managers.
+Each developer generates their own lock file locally.
+
+✈️ Getting Started
+1️⃣ Add OpenAI API Key
 echo "OPENAI_API_KEY=your-key-here" >> .env
-```
 
-2. Install dependencies using your preferred package manager:
-```bash
-# Using pnpm (recommended)
+2️⃣ Install Dependencies
+# pnpm
 pnpm install
 
-# Using npm
+# npm
 npm install
 
-# Using yarn
+# yarn
 yarn install
 
-# Using bun
+# bun
 bun install
-```
 
-2. Start the development server:
-```bash
-# Using pnpm
+3️⃣ Start Development Server
+# pnpm
 pnpm dev
 
-# Using npm
+# npm
 npm run dev
 
-# Using yarn
+# yarn
 yarn dev
 
-# Using bun
+# bun
 bun run dev
-```
 
-This will start both the UI and agent servers concurrently.
 
-## 🖼️ Getting Started with the Canvas
+Runs both the UI and Mastra agent concurrently.
 
-Once the application is running, you can:
+🖼️ Using the Canvas
+Create Cards
 
-1. **Create Cards**: Use the "New Item" button or ask the AI to create cards
-   - "Create a new project"
-   - "Add an entity and a note"
-   - "Create a chart with sample metrics"
+“Create a new project”
 
-2. **Edit Cards**: Click on any field to edit directly, or ask the AI
-   - "Set the project field1 to 'Q1 Planning'"
-   - "Add a checklist item 'Review budget'"
-   - "Update the chart metrics"
+“Add an entity and a note”
 
-3. **Execute Plans**: Give the AI multi-step instructions
-   - "Create 3 projects with different priorities and add 2 checklist items to each"
-   - The AI will create a plan and execute it step by step with visual progress
+“Create a chart with sample metrics”
 
-4. **View JSON**: Toggle between visual canvas and JSON view using the button at the bottom
+Edit Cards
 
-## Available Scripts
-The following scripts can also be run using your preferred package manager:
-- `dev` - Starts both UI and Mastra agent in development mode
-- `dev:agent` - Starts only the Mastra agent development server
-- `dev:debug` - Starts both with debug logging enabled (LOG_LEVEL=debug)
-- `build` - Builds the application for production
-- `start` - Starts the production server
-- `lint` - Runs ESLint for code linting
+“Set the project field1 to ‘Q1 Planning’”
 
-## 🏛️ Architecture Overview
+“Update chart metrics”
 
-```mermaid
+“Add a checklist item ‘Review budget’”
+
+Multi-Step Plans
+
+“Create 3 projects with different priorities and add 2 checklist items to each”
+
+JSON Mode
+
+Toggle between the visual canvas and raw JSON state.
+
+📜 Available Scripts
+
+dev — frontend + agent in dev mode
+
+dev:agent — agent only
+
+dev:debug — verbose logs (LOG_LEVEL=debug)
+
+build — production build
+
+start — serve production
+
+lint — ESLint
+
+🏛️ Architecture Overview
 graph TB
     subgraph "Frontend (Next.js)"
         UI[Canvas UI<br/>page.tsx]
@@ -121,9 +132,9 @@ graph TB
     end
     
     subgraph "Integrated Backend"
-            Runtime[CopilotKit Runtime<br/>src/app/api/copilotkit/route.ts]
-        Agent[Mastra Agent<br/>src/mastra/agents/index.ts]
-        Tools[TypeScript Tools<br/>- setPlan<br/>- updatePlanProgress<br/>- completePlan]
+        Runtime[CopilotKit Runtime<br/>api/copilotkit/route.ts]
+        Agent[Mastra Agent<br/>agents/index.ts]
+        Tools[Tools<br/>setPlan/updatePlan/completePlan]
         Schema[Zod Schema<br/>AgentState]
         Model[LLM<br/>GPT-4o-mini]
     end
@@ -136,129 +147,64 @@ graph TB
     Agent --> Tools
     Agent --> Schema
     Agent --> Model
-    
-    style UI fill:#e1f5fe
-    style Agent fill:#fff3e0
-    style Runtime fill:#f3e5f5
-    
-    click UI "https://github.com/CopilotKit/canvas-with-mastra/blob/main/src/app/page.tsx"
-    click Runtime "https://github.com/CopilotKit/canvas-with-mastra/blob/main/src/app/api/copilotkit/route.ts"
-    click Agent "https://github.com/CopilotKit/canvas-with-mastra/blob/main/src/mastra/agents/index.ts"
-    click Tools "https://github.com/CopilotKit/canvas-with-mastra/blob/main/src/mastra/tools/index.ts"
-```
 
-### Frontend (Next.js + CopilotKit)
-The main UI component is in [`src/app/page.tsx`](https://github.com/CopilotKit/canvas-with-mastra/blob/main/src/app/page.tsx). It includes:
-- **Canvas Management**: Visual grid of cards with create, read, update, delete operations
-- **State Synchronization**: Uses `useCoAgent` hook for real-time state sync with the agent
-- **Frontend Actions**: Exposed as tools to the AI agent via `useCopilotAction`
-- **Plan Visualization**: Shows multi-step plan execution with progress indicators
+🎨 Card Schema (Summary)
 
-### Backend (Mastra Agent)
-The agent logic is in [`src/mastra/agents/index.ts`](https://github.com/CopilotKit/canvas-with-mastra/blob/main/src/mastra/agents/index.ts). It features:
-- **State Management**: Zod schema matching the frontend `AgentState`
-- **Memory Configuration**: Disabled working memory to prevent stale cached state
-- **Tool Integration**: Planning tools (setPlan, updatePlanProgress, completePlan)
-- **Model**: Uses OpenAI's GPT-4o-mini by default (configurable)
-- **Integrated Agent**: No separate agent process required (runs within Next.js), but can be run separately using `dev:agent`
+Project: text, select, date, checklist
 
-### Card Field Schema
-Each card type has specific fields defined consistently across frontend and agent:
-- **Project**: field1 (text), field2 (select), field3 (date), field4 (checklist)
-- **Entity**: field1 (text), field2 (select), field3 (tags), field3_options (available tags)
-- **Note**: field1 (textarea content)
-- **Chart**: field1 (array of metrics with label and value 0-100)
+Entity: text, select, tags
 
-### Data Flow
+Note: textarea
 
-```mermaid
-sequenceDiagram
-    participant User
-    participant UI as Canvas UI
-    participant CK as CopilotKit
-    participant MA as Mastra Agent
-    participant Tools
-    
-    User->>UI: Interact with canvas
-    UI->>CK: Update state via useCoAgent
-    CK->>MA: Process in same runtime
-    MA->>MA: Process with GPT-4o-mini
-    MA->>Tools: Execute TypeScript tools
-    Tools-->>MA: Return results
-    MA->>CK: Return updated state
-    CK->>UI: Sync state changes
-    UI->>User: Display updates
-    
-    Note over MA: Integrated in Next.js
-    Note over UI,MA: Single process architecture
-```
+Chart: metric label + value array
 
-## 📚 Customization Guide
+🔧 Customization Guide
+➕ Adding New Card Types
 
-### Adding New Card Types
-1. Define the data schema in [`src/lib/canvas/types.ts`](https://github.com/CopilotKit/canvas-with-mastra/blob/main/src/lib/canvas/types.ts)
-2. Add the card type to the `CardType` union
-3. Create rendering logic in [`src/components/canvas/CardRenderer.tsx`](https://github.com/CopilotKit/canvas-with-mastra/blob/main/src/components/canvas/CardRenderer.tsx)
-4. Update the agent's instructions in [`src/mastra/agents/index.ts`](https://github.com/CopilotKit/canvas-with-mastra/blob/main/src/mastra/agents/index.ts)
-5. Add corresponding frontend actions in [`src/app/page.tsx`](https://github.com/CopilotKit/canvas-with-mastra/blob/main/src/app/page.tsx)
+Add schema — src/lib/canvas/types.ts
 
-### Modifying Existing Cards
-- Field definitions are in the agent's instructions
-- UI components are in [`CardRenderer.tsx`](https://github.com/CopilotKit/canvas-with-mastra/blob/main/src/components/canvas/CardRenderer.tsx)
-- Frontend actions follow the pattern: `set[Type]Field[Number]`
+Add to CardType
 
-### Configuring the Agent
-- Agent definition: [`src/mastra/agents/index.ts`](https://github.com/CopilotKit/canvas-with-mastra/blob/main/src/mastra/agents/index.ts)
-- Tools: [`src/mastra/tools/index.ts`](https://github.com/CopilotKit/canvas-with-mastra/blob/main/src/mastra/tools/index.ts)
-- Memory settings can be adjusted in the agent configuration
-- Model can be changed by updating the `model` property
+Add UI — CardRenderer.tsx
 
-### Styling
-- Global styles: [`src/app/globals.css`](https://github.com/CopilotKit/canvas-with-mastra/blob/main/src/app/globals.css)
-- Component styles use Tailwind CSS with shadcn/ui components
-- Theme colors can be modified via CSS custom properties
+Update agent — src/mastra/agents/index.ts
 
-## 📚 Documentation
+Add frontend actions — src/app/page.tsx
 
-- [Mastra Documentation](https://mastra.ai/en/docs) - Learn more about Mastra and its features
-- [CopilotKit Documentation](https://docs.copilotkit.ai) - Explore CopilotKit's capabilities
-- [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API
+✏️ Modifying Existing Cards
 
-## Troubleshooting
+Update schema and rendering logic
 
-### Agent Connection Issues
-If you see "I'm having trouble connecting to my tools", make sure:
-1. Your OpenAI API key is set correctly in `.env`
-2. The agent is properly registered in [`src/mastra/index.ts`](https://github.com/CopilotKit/canvas-with-mastra/blob/main/src/mastra/index.ts)
-3. The server started successfully (check terminal output)
+Adjust agent instructions
 
-### State Synchronization Issues
-If the canvas and AI seem out of sync:
-1. Check the browser console for errors
-2. Ensure all frontend actions are properly registered
-3. Verify the agent's memory is configured to avoid caching (working memory disabled)
+Ensure actions follow naming conventions
 
-### Debug Logging
-To enable detailed logging:
-```bash
+🧠 Agent Configuration
+
+Controlled through src/mastra/agents/index.ts
+
+Tools stored under src/mastra/tools
+
+Memory defaults can be changed
+
+LLM model override available
+
+🛠️ Troubleshooting
+Agent Connection Issues
+
+Check OpenAI key in .env
+
+Ensure registration in mastra/index.ts
+
+Check terminal logs
+
+Canvas Sync Issues
+
+Check browser console
+
+Verify actions registered
+
+Ensure working memory isn't caching old state
+
+Debug Logging
 npm run dev:debug
-```
-This sets `LOG_LEVEL=debug` for more verbose output from Mastra.
-
-### Common Issues
-- **"Agent not found"**: Check that 'sample_agent' is registered in [`src/mastra/index.ts`](https://github.com/CopilotKit/canvas-with-mastra/blob/main/src/mastra/index.ts)
-- **Tool execution errors**: Ensure tool schemas in [`src/mastra/tools/index.ts`](https://github.com/CopilotKit/canvas-with-mastra/blob/main/src/mastra/tools/index.ts) match frontend expectations
-- **TypeScript errors**: Run `npm run build` to check for type issues
-
-## Contributing
-
-Feel free to submit issues and enhancement requests! This starter is designed to be easily extensible.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-
-> [!IMPORTANT]
-> Some features are still under active development and may not yet work as expected. If you encounter a problem using this template, please [report an issue](https://github.com/CopilotKit/canvas-with-mastra/issues/new/choose) to this repository.
