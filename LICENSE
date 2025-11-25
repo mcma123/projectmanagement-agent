@@ -1,21 +1,73 @@
-The MIT License
+INNOVATION IMPERIAL PROPRIETARY LICENSE
 
-Copyright (c) Atai Barkai
+Copyright © Innovation Imperial
+All Rights Reserved
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This software and all associated files, code, assets, designs, databases, and documentation (the “Software”) are the exclusive intellectual property of Innovation Imperial.
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
+1. Ownership
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+The Software is fully, solely, and permanently owned by Innovation Imperial.
+No rights, licenses, or permissions are granted to any user unless explicitly provided in written form and signed by an authorized representative of Innovation Imperial.
+
+This Software was developed by Mcmarsh Dzwimbu for Innovation Imperial.
+
+2. Restrictions
+
+Unless you have prior written authorization from Innovation Imperial, you may NOT:
+
+Copy, reproduce, or redistribute the Software
+
+Modify, edit, adapt, translate, or create derivative works
+
+Reverse-engineer, decompile, or attempt to extract the source code
+
+Publish, upload, or share the Software publicly
+
+Sell, sublicense, rent, or commercially exploit the Software
+
+Include the Software in any product, service, or platform
+
+Use the Software for development, commercial, academic, or operational purposes
+
+Any unauthorized use is strictly prohibited and may result in legal enforcement.
+
+3. Permitted Use (View-Only)
+
+You are permitted to view the Software solely for the purpose of review, demonstration, assessment, or verification.
+No functional usage, production usage, deployment, modification, or integration is allowed.
+
+4. Intellectual Property Notice
+
+All intellectual property rights, including but not limited to source code, architecture, design, branding, UI/UX, business logic, and associated documentation, remain the exclusive property of Innovation Imperial.
+
+Nothing in this license transfers ownership or grants additional rights to the user.
+
+5. No AI Training Clause (Optional—remove if unwanted)
+
+The Software and its contents may not be used for:
+
+Training machine learning models
+
+Dataset creation
+
+AI research
+
+Automation or code-learning tools
+
+unless explicit written permission is granted by Innovation Imperial.
+
+
+6. Disclaimer of Warranty
+
+The Software is provided “AS IS”, without warranty of any kind, express or implied.
+Innovation Imperial makes no guarantees regarding performance, reliability, security, or fitness for any purpose.
+
+7. Limitation of Liability
+
+Innovation Imperial shall not be liable for any damages arising out of or related to the use, misuse, or inability to use the Software, including but not limited to direct, indirect, incidental, or consequential damages.
+
+8. Termination
+
+Any breach of this license immediately terminates all permissions granted.
+Upon termination, you must destroy all copies of the Software in your possession.
